@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const Muro = SpriteKind.create()
+    export const pipistrellobase = SpriteKind.create()
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
@@ -7,13 +8,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
+        . . . . . 7 7 7 7 . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . 7 7 7 7 7 7 . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . 7 7 7 7 . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -26,33 +27,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . f f 5 . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . f f 5 . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . f f f f . . . . . . . 
+        . . . . . . . . . . . . . 2 . . 
+        . . . . . 4 4 4 4 . 2 . . . . . 
+        . . . . 2 2 2 2 2 f . . . 2 . . 
+        . . . . . . 2 . . . . 2 . . . . 
+        . . . . . 2 2 2 . . . . . . 2 . 
+        . . . . . 2 2 5 . . . . . . . . 
+        . . . . . 2 2 2 . . . 2 . . . . 
+        . . . . . . 2 . . . . . 2 . 2 . 
+        . . . . 2 2 2 2 2 f . . . . . . 
+        . . . . . 4 4 4 4 . . 2 . . 2 . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -60,47 +44,65 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . f f 5 . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . 4 . . . 
+        . . . . . 4 4 4 4 . 4 . . . . . 
+        . . . . 2 2 2 2 2 f . . . 4 . . 
+        . . . . . . 2 . . . . 4 . . . . 
+        . . . . . 2 2 2 . . . . 4 . . . 
+        . . . . . 2 2 5 . . . . . . . . 
+        . . . . . 2 2 2 . . . . . 4 . . 
+        . . . . . . 2 . . . . 4 . . . . 
+        . . . . 2 2 2 2 2 f 4 . . 4 . . 
+        . . . . . 4 4 4 4 . . 4 . . . . 
+        . . . . . . . . . . . . . 4 . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `,img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . 7 . . . 
+        . . . . . 4 4 4 4 . 7 . . . . . 
+        . . . . 2 2 2 2 2 f . . 7 . . . 
+        . . . . . . 2 . . . . 7 . . . . 
+        . . . . . 2 2 2 . . . . . 7 . . 
+        . . . . . 2 2 5 . . . . . . . . 
+        . . . . . 2 2 2 . . . . . 7 . . 
+        . . . . . . 2 . . . . 7 . . . . 
+        . . . . 2 2 2 2 2 f . . . 7 . . 
+        . . . . . 4 4 4 4 . . . . 7 . . 
+        . . . . . . . . . . . 7 . . . . 
+        . . . . . . . . . . . . . . 7 . 
         . . . . . . . . . . . . . . . . 
-        . . . . . f f f f . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . f f 5 . . . . . . . . 
-        . . . . . f f f . . . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . f f f f f f . . . . . . 
-        . . . . . f f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
+        . . . . 2 2 2 2 2 2 . . . . . . 
+        . . . . . . 2 . . . . . . . . . 
+        . . . . . 2 2 2 . . . . . . . . 
+        . . . . . 2 2 5 . . . . . . . . 
+        . . . . . 2 2 2 . . . . . . . . 
+        . . . . . . 2 . . . . . . . . . 
+        . . . . 2 2 2 2 2 2 . . . . . . 
+        . . . . . 4 4 4 4 . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `],
-    2000,
+    100,
     false
     )
 })
-sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
-})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     pipistrelloBase.destroy()
-    pipistrelloBase.startEffect(effects.spray)
+    pipistrelloBase.startEffect(effects.warmRadial)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
 })
 let pipistrelloBase: Sprite = null
 let projectile: Sprite = null
@@ -232,35 +234,35 @@ Navetta_spaziale = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . f f f f . . . . . . . 
-    . . . . f f f f f f . . . . . . 
-    . . . . . . f . . . . . . . . . 
-    . . . . . f f f . . . . . . . . 
-    . . . . . f f 5 . . . . . . . . 
-    . . . . . f f f . . . . . . . . 
-    . . . . . . f . . . . . . . . . 
-    . . . . f f f f f f . . . . . . 
-    . . . . . f f f f . . . . . . . 
+    . . . . . 4 4 4 4 . . . . . . . 
+    . . . . 2 2 2 2 2 2 . . . . . . 
+    . . . . . . 2 . . . . . . . . . 
+    . . . . . 2 2 2 . . . . . . . . 
+    . . . . . 2 2 5 . . . . . . . . 
+    . . . . . 2 2 2 . . . . . . . . 
+    . . . . . . 2 . . . . . . . . . 
+    . . . . 2 2 2 2 2 2 . . . . . . 
+    . . . . . 4 4 4 4 . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(Navetta_spaziale, 100, 100)
 Navetta_spaziale.setStayInScreen(true)
-info.setLife(3)
-game.onUpdateInterval(randint(500, 1000), function () {
+info.setLife(5)
+game.onUpdateInterval(randint(200, 500), function () {
     pipistrelloBase = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . c b a c . . . . . . 
-        . . . . c c b c f a c . . . . . 
-        . . . . a f b b b a c . . . . . 
-        . . . . a f f b a f c c . . . . 
-        . . . . c b b a f f c . . . . . 
-        . . . . . b b a f a . . . . . . 
-        . . . . . . c b b . . . . . . . 
+        . . . . . . c c . . . . . . . . 
+        . . . . c a f b c . . . . . . . 
+        . . . . b f f b c c . . . . . . 
+        . . . a a f b a b a c . . . . . 
+        . . . c a c b b f f b . . . . . 
+        . . . . b f f b f a b . . . . . 
+        . . . . a f f b b b a . . . . . 
+        . . . . . a b b c c . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 

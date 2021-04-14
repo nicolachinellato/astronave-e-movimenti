@@ -97,14 +97,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    pipistrelloBase.destroy()
-    pipistrelloBase.startEffect(effects.warmRadial)
+    asteroide.destroy()
+    asteroide.startEffect(effects.warmRadial)
+    info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(-1)
 })
-let pipistrelloBase: Sprite = null
+let mySprite: Sprite = null
+let asteroide: Sprite = null
 let projectile: Sprite = null
 let Navetta_spaziale: Sprite = null
 Navetta_spaziale = sprites.create(img`
@@ -128,8 +130,9 @@ Navetta_spaziale = sprites.create(img`
 controller.moveSprite(Navetta_spaziale, 100, 100)
 Navetta_spaziale.setStayInScreen(true)
 info.setLife(5)
+info.setScore(0)
 game.onUpdateInterval(randint(200, 500), function () {
-    pipistrelloBase = sprites.create(img`
+    asteroide = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -147,6 +150,28 @@ game.onUpdateInterval(randint(200, 500), function () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Enemy)
-    pipistrelloBase.setPosition(160, randint(0, 120))
-    pipistrelloBase.setVelocity(randint(-50, -100), 0)
+    asteroide.setPosition(160, randint(0, 120))
+    asteroide.setVelocity(randint(-50, -100), 0)
+})
+game.onUpdateInterval(randint(500, 1000), function () {
+    mySprite = sprites.create(img`
+        . . . . . . . . . c c 8 . . . . 
+        . . . . . . 8 c c c f 8 c c . . 
+        . . . c c 8 8 f c a f f f c c . 
+        . . c c c f f f c a a f f c c c 
+        8 c c c f f f f c c a a c 8 c c 
+        c c c b f f f 8 a c c a a a c c 
+        c a a b b 8 a b c c c c c c c c 
+        a f c a a b b a c c c c c f f c 
+        a 8 f c a a c c a c a c f f f c 
+        c a 8 a a c c c c a a f f f 8 a 
+        . a c a a c f f a a b 8 f f c a 
+        . . c c b a f f f a b b c c 6 c 
+        . . . c b b a f f 6 6 a b 6 c . 
+        . . . c c b b b 6 6 a c c c c . 
+        . . . . c c a b b c c c . . . . 
+        . . . . . c c c c c c . . . . . 
+        `, SpriteKind.Enemy)
+    mySprite.setPosition(160, randint(0, 120))
+    mySprite.setVelocity(randint(-50, -100), 0)
 })

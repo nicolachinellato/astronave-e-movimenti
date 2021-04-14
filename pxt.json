@@ -2,7 +2,10 @@
     "name": "astronave e movimenti",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.1",
+        "Sprite Grid": "github:microsoft/arcade-grid#v1.3.0",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0"
     },
     "files": [
         "main.blocks",

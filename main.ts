@@ -97,16 +97,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    asteroide_grande.destroy()
     asteroide.destroy()
-    asteroide.startEffect(effects.warmRadial)
+    asteroide_grande.startEffect(effects.ashes)
+    asteroide.startEffect(effects.ashes)
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
+    asteroide_grande.destroy()
     info.changeLifeBy(-1)
 })
-let mySprite: Sprite = null
 let asteroide: Sprite = null
+let asteroide_grande: Sprite = null
 let projectile: Sprite = null
 let Navetta_spaziale: Sprite = null
 Navetta_spaziale = sprites.create(img`
@@ -154,7 +157,7 @@ game.onUpdateInterval(randint(400, 700), function () {
     asteroide.setVelocity(randint(-50, -100), 0)
 })
 game.onUpdateInterval(randint(700, 1000), function () {
-    mySprite = sprites.create(img`
+    asteroide_grande = sprites.create(img`
         . . . . . . . . c c c c . . . . 
         . . . . c c c c c c c c c . . . 
         . . . c f c c a 9 a a c a c . . 
@@ -172,6 +175,6 @@ game.onUpdateInterval(randint(700, 1000), function () {
         . . . . c b b a a 6 b c . . . . 
         . . . . . . b 6 6 c c . . . . . 
         `, SpriteKind.Enemy)
-    mySprite.setPosition(160, randint(0, 120))
-    mySprite.setVelocity(randint(-50, -100), 0)
+    asteroide_grande.setPosition(160, randint(0, 120))
+    asteroide_grande.setVelocity(randint(-50, -100), 0)
 })

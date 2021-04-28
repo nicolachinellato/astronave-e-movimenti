@@ -155,6 +155,9 @@ game.onUpdateInterval(randint(400, 700), function () {
         `, SpriteKind.Enemy)
     asteroide.setPosition(160, randint(0, 120))
     asteroide.setVelocity(randint(-50, -100), 0)
+    if (info.score() > 24) {
+        asteroide.destroy()
+    }
 })
 game.onUpdateInterval(randint(700, 1000), function () {
     asteroide_grande = sprites.create(img`
@@ -177,4 +180,7 @@ game.onUpdateInterval(randint(700, 1000), function () {
         `, SpriteKind.Enemy)
     asteroide_grande.setPosition(160, randint(0, 120))
     asteroide_grande.setVelocity(randint(-50, -100), 0)
+    if (info.score() > 24) {
+        asteroide_grande.destroy()
+    }
 })

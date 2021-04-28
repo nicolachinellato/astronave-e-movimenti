@@ -108,6 +108,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     asteroide_grande.destroy()
     info.changeLifeBy(-1)
 })
+let mySprite: Sprite = null
 let asteroide: Sprite = null
 let asteroide_grande: Sprite = null
 let projectile: Sprite = null
@@ -134,6 +135,9 @@ controller.moveSprite(Navetta_spaziale, 100, 100)
 Navetta_spaziale.setStayInScreen(true)
 info.setLife(5)
 info.setScore(0)
+game.onUpdate(function () {
+	
+})
 game.onUpdateInterval(randint(400, 700), function () {
     asteroide = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -182,5 +186,23 @@ game.onUpdateInterval(randint(700, 1000), function () {
     asteroide_grande.setVelocity(randint(-50, -100), 0)
     if (info.score() > 24) {
         asteroide_grande.destroy()
+        mySprite = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . 2 . . 2 . . . . . . . 
+            . . . . . 2 2 2 2 . . . . . . . 
+            . . . . 2 f 2 2 f 2 . . . . . . 
+            . . . . 2 2 2 2 2 2 . . . . . . 
+            . . . . 2 f f f f 2 . . . . . . 
+            . . . . 2 2 2 2 2 2 . . . . . . 
+            . . . . 2 2 2 2 2 2 . . . . . . 
+            . . . . . 2 . . 2 . . . . . . . 
+            . . . . . . . e . . . . . . . . 
+            . . . . . . e e . . . . . . . . 
+            . . . . . e e e e . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Player)
     }
 })
